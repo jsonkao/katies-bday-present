@@ -2,8 +2,281 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
   <title>whatever</title>
+  <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
+
+  <style>
+  :root {
+  --balloon1-bg-color: #eaeaeae6;
+  --balloon2-bg-color: #e8dab2e6;
+  --balloon3-bg-color: #dd6e42e3;
+  --balloon4-bg-color: #4f6d7ad6;
+  --balloon5-bg-color: #eaeaeae6;
+  --bg-color: #c0d6df;
+
+  --balloon-anim-1: balloon1 15s ease infinite;
+  --balloon-anim-2: balloon2 5s ease infinite;
+  --balloon-anim-3: balloon3 10s ease infinite;
+  --balloon-anim-4: balloon4 5s ease infinite;
+  --balloon-anim-5: balloon5 15s ease infinite;
+  --balloon-anim-6: balloon7 5s ease infinite;
+}
+
+body {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 50px;
+  min-width: 600px;
+}
+
+.happy,
+.birthday {
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+}
+.name {
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+  font-size: 80px;
+  color: #4f6d7a;
+  font-family: "Comic Sans MS", Arial, Helvetica, sans-serif;
+}
+
+.balloon {
+  width: 76px;
+  height: 100px;
+  margin: 10px;
+  border-radius: 80%;
+  position: relative;
+}
+
+.balloon::after {
+  position: absolute;
+  bottom: -16px;
+  left: 31px;
+  content: "\2713";
+  transform: rotate(180deg);
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.happy .balloon::before,
+.birthday .balloon::before {
+  position: absolute;
+  top: calc(50% - 15px);
+  left: calc(50% - 10px);
+  font-size: 30px;
+  color: #4f6d7a;
+  font-family: "Comic Sans MS", Arial, Helvetica, sans-serif;
+}
+
+.happy .balloon:nth-child(1)::before {
+  content: "H";
+}
+.happy .balloon:nth-child(2)::before {
+  content: "A";
+}
+.happy .balloon:nth-child(3)::before {
+  content: "P";
+}
+.happy .balloon:nth-child(4)::before {
+  content: "P";
+}
+.happy .balloon:nth-child(5)::before {
+  content: "Y";
+}
+.birthday .balloon:nth-child(1)::before {
+  content: "B";
+}
+.birthday .balloon:nth-child(2)::before {
+  content: "I";
+}
+.birthday .balloon:nth-child(3)::before {
+  content: "R";
+}
+.birthday .balloon:nth-child(4)::before {
+  content: "T";
+}
+.birthday .balloon:nth-child(5)::before {
+  content: "H";
+}
+.birthday .balloon:nth-child(6)::before {
+  content: "D";
+}
+.birthday .balloon:nth-child(7)::before {
+  content: "A";
+}
+.birthday .balloon:nth-child(8)::before {
+  content: "Y";
+}
+@keyframes balloon1 {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(-100deg);
+  }
+  50% {
+    transform: translate(0, 80px) rotate(100deg);
+  }
+}
+
+@keyframes balloon2 {
+  0%,
+  100% {
+    transform: translate(-200px, 400px) rotate(105deg);
+  }
+  50% {
+    transform: translate(0, -100px) rotate(-50deg);
+  }
+}
+
+@keyframes balloon3 {
+  0%,
+  100% {
+    transform: translate(-300px, 0) rotate(-100deg);
+  }
+  50% {
+    transform: translate(0, -200px) rotate(200deg);
+  }
+}
+
+@keyframes balloon4 {
+  0%,
+  100% {
+    transform: translate(-80px, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(0, 60px) rotate(30deg);
+  }
+}
+
+@keyframes balloon5 {
+  0%,
+  100% {
+    transform: translate(70px, 0) rotate(20deg);
+  }
+  50% {
+    transform: translate(0, 80px) rotate(-20deg);
+  }
+}
+@keyframes balloon6 {
+  0%,
+  100% {
+    transform: translate(-20px, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(0, 80px) rotate(30deg);
+  }
+}
+
+@keyframes balloon7 {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(150deg);
+  }
+  50% {
+    transform: translate(0, 0) rotate(-150deg);
+  }
+}
+.balloon1 {
+  background: var(--balloon1-bg-color);
+  box-shadow: inset 10px 10px 10px #c7c3c3e6;
+}
+.balloon1::after {
+  color: var(--balloon1-bg-color);
+}
+
+.balloon2 {
+  background: var(--balloon2-bg-color);
+  box-shadow: inset 10px 10px 10px #d5c7a1;
+}
+.balloon2::after {
+  color: var(--balloon2-bg-color);
+}
+
+.balloon3 {
+  background: var(--balloon3-bg-color);
+  box-shadow: inset 10px 10px 10px #cf6840;
+}
+.balloon3::after {
+  color: var(--balloon3-bg-color);
+}
+
+.balloon4 {
+  background: var(--balloon4-bg-color);
+  box-shadow: inset 10px 10px 10px #4f6d7a;
+}
+.balloon4::after {
+  color: var(--balloon4-bg-color);
+}
+.balloon5 {
+  background: var(--balloon5-bg-color);
+  box-shadow: inset 10px 10px 10px #cbc8c8;
+}
+.balloon5::after {
+  color: var(--balloon5-bg-color);
+}
+
+.balloon-anim1 {
+  animation: var(--balloon-anim-1);
+}
+.balloon-anim2 {
+  animation: var(--balloon-anim-2);
+}
+.balloon-anim3 {
+  animation: var(--balloon-anim-3);
+}
+.balloon-anim4 {
+  animation: var(--balloon-anim-4);
+}
+.balloon-anim5 {
+  animation: var(--balloon-anim-5);
+}
+.balloon-anim6 {
+  animation: var(--balloon-anim-6);
+}
+
+  .container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+  }
+  .kiki {
+    font-size: 100px;
+    font-family: 'Monoton';
+  }
+</style>
 </head>
 <body text="white" link="white" id="body" vlink="white" alink="white" background="./gifs/circface.gif">
+  <div class='container'>
+    <h1 class='kiki'>KIIIKIIIII</h1>
+  </div>
+  <div class="happy">
+  <div class="balloon balloon1 balloon-anim1"></div>
+  <div class="balloon balloon2 balloon-anim6"></div>
+  <div class="balloon balloon3 balloon-anim3"></div>
+  <div class="balloon balloon4 balloon-anim4"></div>
+  <div class="balloon balloon5 balloon-anim5"></div>
+</div>
+<div class="birthday">
+  <div class="balloon balloon3 balloon-anim6"></div>
+  <div class="balloon balloon1 balloon-anim2"></div>
+  <div class="balloon balloon4 balloon-anim1"></div>
+  <div class="balloon balloon2 balloon-anim6"></div>
+  <div class="balloon balloon1 balloon-anim4"></div>
+  <div class="balloon balloon3 balloon-anim5"></div>
+  <div class="balloon balloon2 balloon-anim1"></div>
+  <div class="balloon balloon4 balloon-anim6"></div>
+</div>
+</div>
+<div class="name">
+  Sweetheart
+</div>
   <script>
     const gifs = ['116a.gif', '828.GIF', '828a.GIF', '910a.GIF', 'circface.gif', 'twm.GIF'];
     let i = 0;
@@ -11,6 +284,16 @@
       document.getElementById('body').setAttribute('background', './gifs/' + gifs[i % gifs.length]);
       i++;
     }, 200);
+    let x = 1;
+    const hi = setInterval(() => {
+      document.body.style.zoom = x;
+      console.log(x);
+      if (x > 1.5) {
+        x = 1;
+      } else {
+        x += 0.1;        
+      }
+    }, 50);
   </script>
 </body>
 </html>
