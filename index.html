@@ -29,7 +29,6 @@
 }
 
 body {
-  position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
@@ -246,12 +245,25 @@ body {
 .balloon-anim6 {
   animation: var(--balloon-anim-6);
 }
-
+#yeet {
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  transition-duration: 13s;
+}
   .container {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: -3;
     position: absolute;
   }
   .kiki {
@@ -267,6 +279,7 @@ body {
     animation: turn 1s infinite;
     width: 500px;
     position: absolute;
+    z-index: -4;
     top: 100px;
     left: 50%;
     transform: translateX(-50%);
@@ -299,11 +312,26 @@ body {
 <div class="name" style="color:red">
   DOULUHMEEE
 </div>
-<audio autoplay loop>
+<audio id="hi" loop>
   <source src="./audio/drake1.mp3" type="audio/wav">
   Your browser does not support the audio element.
 </audio>
+
   <script>
+    const yum = () => {
+      document.getElementById('hi').play();
+      document.getElementById('yeet').style.opacity = 0;
+      const hi = setInterval(() => {
+      if (true) {
+        document.body.style.zoom = x;
+        if (x > 1.5) {
+          x = 1;
+        } else {
+          x += 0.05;        
+        }
+      }
+    }, 30);
+    }
     const gifs = ['116a.gif', '828.GIF', '828a.GIF', '910a.GIF', 'circface.gif', 'twm.GIF'];
     let i = 0;
     const intervalId = setInterval(() => {
@@ -311,14 +339,11 @@ body {
       i++;
     }, 200);
     let x = 1;
-    const hi = setInterval(() => {
-      document.body.style.zoom = x;
-      if (x > 1.5) {
-        x = 1;
-      } else {
-        x += 0.05;        
-      }
-    }, 30);
+    
   </script>
 </body>
+
+<div id="yeet">
+  <button onclick="yum()">enter site</button>
+</div>
 </html>
