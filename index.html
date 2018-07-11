@@ -1,0 +1,16 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <title>whatever</title>
+</head>
+<body text="white" link="white" id="body" vlink="white" alink="white" background="./gifs/circface.gif">
+  <script>
+    const gifs = ['116a.gif', '828.GIF', '828a.GIF', '910a.GIF', 'circface.gif', 'twm.GIF'];
+    let i = 0;
+    const intervalId = setInterval(() => {
+      document.getElementById('body').setAttribute('background', './gifs/' + gifs[i % gifs.length]);
+      i++;
+    }, 200);
+  </script>
+</body>
+</html>
