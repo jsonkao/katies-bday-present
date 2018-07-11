@@ -274,7 +274,14 @@ body {
     from {transform: rotate(0deg)}
     to {transform: rotate(300deg)}
 }
+@keyframes turno {
+    from {transform: rotate(0deg)}
+    to {transform: rotate(300deg)}
+}
 
+.trippy {
+  animation: turno 2s infinite;
+}
   #katie {
     animation: turn 1s infinite;
     width: 500px;
@@ -321,6 +328,18 @@ body {
     const yum = () => {
       document.getElementById('hi').play();
       document.getElementById('yeet').style.opacity = 0;
+      let a = 0;
+          document.getElementById('btn').classList.add('trippy');
+      const bye = setInterval(() => {
+        if (a % 2 === 0) {
+          document.getElementById('btn').style.height = '100px';
+          document.getElementById('btn').style.height = '100px';
+        } else {
+          document.getElementById('btn').style.height = '20px';
+          document.getElementById('btn').style.height = '20px';
+        }
+        a++;
+      }, 100);
       const hi = setInterval(() => {
       if (true) {
         document.body.style.zoom = x;
@@ -344,6 +363,6 @@ body {
 </body>
 
 <div id="yeet">
-  <button onclick="yum()">enter site</button>
+  <button onclick="yum()" id="btn">enter site</button>
 </div>
 </html>
