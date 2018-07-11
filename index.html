@@ -42,6 +42,7 @@ body {
   justify-content: center;
   padding: 50px;
   font-size: 80px;
+  font-weight: 700;
   color: #4f6d7a;
   font-family: "Comic Sans MS", Arial, Helvetica, sans-serif;
 }
@@ -274,9 +275,13 @@ body {
   <div class="balloon balloon4 balloon-anim6"></div>
 </div>
 </div>
-<div class="name">
-  Sweetheart
+<div class="name" style="color:red">
+  DOULUHMEEE
 </div>
+<audio autoplay loop>
+  <source src="./audio/drake1.wav" type="audio/wav">
+  Your browser does not support the audio element.
+</audio>
   <script>
     const gifs = ['116a.gif', '828.GIF', '828a.GIF', '910a.GIF', 'circface.gif', 'twm.GIF'];
     let i = 0;
@@ -287,13 +292,12 @@ body {
     let x = 1;
     const hi = setInterval(() => {
       document.body.style.zoom = x;
-      console.log(x);
       if (x > 1.5) {
         x = 1;
       } else {
-        x += 0.1;        
+        x += 0.05;        
       }
-    }, 50);
+    }, 30);
   </script>
 </body>
 </html>
