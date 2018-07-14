@@ -279,6 +279,17 @@ body {
     to {transform: rotate(300deg)}
 }
 
+@keyframes zoomInOut {
+  from {
+    transform: rotate(10deg);
+    width: 10px;
+  }
+  to {
+    transform: rotate(-270deg);
+    width: 200px;
+  }
+}
+
 .trippy {
   animation: turno 2s infinite;
 }
@@ -290,6 +301,15 @@ body {
     top: 100px;
     left: 50%;
     transform: translateX(-50%);
+  }
+
+  #kiki {
+    animation: zoomInOut 2.3s infinite;
+    width: 10px;
+    position: absolute;
+    z-index: -3;
+    top: 10vh;
+    left: 20vw;
   }
 </style>
 </head>
@@ -316,6 +336,7 @@ body {
 </div>
 </div>
 <img src="./img/dummy.jpg" id="katie"/>
+<img src="./img/kiki.jpg" id="kiki"/>
 <div class="name" style="color:red">
   DOULUHMEEE
 </div>
@@ -329,7 +350,9 @@ body {
       document.getElementById('hi').play();
       document.getElementById('yeet').style.opacity = 0;
       let a = 0;
-          document.getElementById('btn').classList.add('trippy');
+      document.getElementById('btn').classList.add('trippy');
+      document.getElementById('btn').style.transitionDuration = '0.1s';
+      document.getElementById('btn').style.outline = 'none';
       const bye = setInterval(() => {
         if (a % 2 === 0) {
           document.getElementById('btn').style.height = '100px';
